@@ -1,0 +1,20 @@
+box-shadow()
+    -webkit-box-shadow arguments
+    -moz-box-shadow arguments
+    box-shadow arguments
+
+font-face($font-name, $file-path, $format , $weight , $style = 'normal')
+  @font-face
+    font-family $font-name
+    src url($file-path)
+    src url ($file-path) format($format)
+    font-weight unquote($weight)
+    font-style unquote($style)
+
+for_breakpoint(breakpoints)
+  conditions = ()
+  for breakpoint in breakpoints
+    push(conditions, media_queries[breakpoint])
+  conditions = join(", ", conditions)
+  @media conditions
+    {block}

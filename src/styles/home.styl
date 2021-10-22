@@ -1,0 +1,839 @@
+/* eslint-disable */
+@import '../styles/main.styl';
+.v-01
+  content url("../assets/home/iconos/ventajas/v-01.png")
+.v-02 
+  content url("../assets/home/iconos/ventajas/v-02.png")
+.v-03 
+  content url("../assets/home/iconos/ventajas/v-03.png")
+.v-04
+  content url("../assets/home/iconos/ventajas/v-04.png")
+.rk-1
+  content url("../assets/home/iconos/rankings/rk-1.png")
+.rk-2
+  content url("../assets/home/iconos/rankings/rk-2.png")
+.rk-3
+  content url("../assets/home/iconos/rankings/rk-3.png")
+.logo-1
+  content url("../assets/home/iconos/rankings/sponsor/logo-1.png")
+.conoce-home
+  padding-bottom 20px
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  color: white;
+  font-weight: bold;
+  line-height: 23px;
+  width: 100%;
+  height: 25.9vh;
+  max-height 342px;
+  background-repeat: no-repeat;
+  min-height 190px;
+  border: 1px solid white;
+  font-family gt-pressura-bold
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  padding 20px;
+  text-align left;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color:black;
+  
+  
+  padding-bottom 10px;
+    h2 {
+      color: white;
+      font-size 39.82px;
+      line-height 34.78px;
+      text-transform initial
+    };
+    &.bg-salud{
+     background-image: url('../assets/home/areas/salud/kv-1.jpg')!important;
+    };
+    &.bg-energia{
+     background-image: url('../assets/home/areas/energia/kv-1.jpg')!important;
+    };
+   
+    &.bg-finanzas{
+     background-image: url('../assets/home/areas/finanzas/kv-1.jpg')!important;
+    }
+    &.bg-administracion{
+     background-image: url('../assets/home/areas/administracion/kv-1.jpg')!important;
+    }
+    &.bg-b2b{
+     background-image: url('../assets/home/areas/b2b/kv-1.jpg')!important;
+    }
+    &.bg-marketing{
+     background-image: url('../assets/home/areas/marketing/kv-1.jpg')!important;
+    }
+    &.bg-ti{
+     background-image: url('../assets/home/areas/ti/kv-1.jpg')!important;
+    };
+    &.bg-mineria{
+     background-image: url('../assets/home/areas/mineria/kv-1.jpg')!important;
+    };
+    &.bg-logistica{
+     background-image: url('../assets/home/areas/logistica/kv-1.jpg')!important;
+    };
+    &.bg-logistica{
+     background-image: url('../assets/home/areas/logistica/kv.jpg')!important;
+    };
+}
+
+.flip-card-back 
+  background-color: bg-black;
+  transform: rotateY(180deg);
+  h2 
+    text-transform initial
+    font-size 38.82px
+    line-height 33.78px
+    margin-bottom 7px
+  p  
+    font-family Raleway-Regular
+    font-size 18px
+    line-height 18.1px
+    color white
+    margin-bottom 2px
+  strong  
+    color white
+    font-size 39.82px
+    line-height 37px
+    font-family arca-majora-3-heavy
+  &.bg-back-salud
+    background-color #50BDB7  
+    h2 
+     color light-salud
+  &.bg-back-energia
+    background-color #89898A
+    h2 
+     color light-energia
+  &.bg-back-ti
+    background-color #5D6F79
+    h2 
+     color light-ti
+  &.bg-back-marketing
+    background-color #09484F
+    h2 
+     color light-marketing
+  &.bg-back-finanzas
+    background-color  #8395A1
+    h2 
+     color light-finanzas
+  &.bg-back-b2b
+    background-color #476BA5
+    h2 
+     color light-b2b
+  &.bg-back-logistica
+    background-color  #80A0B5
+    h2 
+     color light-logistica
+  &.bg-back-admi
+    background-color #7D6247
+    h2 
+     color light-administracion
+  &.bg-back-mineria
+    background-color #295740
+    h2 
+     color #4FA375
+  a
+    text-decoration none
+    display flex
+    align-self flex-end
+    flex-direction column
+    justify-items end
+  h1
+    font-size 21px
+    border-bottom none 
+  
+  
+    
+
+
+
+.box-area {
+  color: white;
+  font-weight: bold;
+  line-height: 23px;
+  width: 100%;
+  height: 180px;
+  border: 1px solid white;
+  background-color: bg-black;
+}
+
+.nav {
+  border-width: 0px !important;
+  -webkit-box-shadow: 0px 0px !important;
+  box-shadow: 0px 0px !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))) !important;
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%) !important;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%) !important;
+  color: black !important;
+}
+
+.navbar {
+  color: black !important;
+}
+
+.pr-0 {
+  padding-right: 0px !important;
+}
+
+.pl-0 {
+  padding-left: 0px !important;
+}
+
+h3 {
+  margin: 40px 0 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin-left: 15px
+}
+
+.nav-item2 {
+  display: inline-block;
+  margin: 0px;
+  max-width: 380px;
+  width: 100%;
+  min-height: 70px;
+  font-size: 24px;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  text-decoration none
+}
+
+h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  width: 100%;
+  line-height 72px;
+  font-weight: bold;
+  color: primary-pee;
+  font-family: gt-pressura-bold
+  margin-bottom 0
+}
+
+h2 {
+  font-size: 37.42px;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: bold;
+  color: primary-pee;
+  font-family: gt-pressura-bold;
+  line-height 47.78px
+  margin-bottom 5px
+  letter-spacing 0.026em
+}
+h4{
+  font-size: 24px;
+  line-height 28px
+  font-weight 100
+  font-family Raleway-Regular
+
+}
+
+.line {
+  border-top: 4px solid primary-pee;
+  width: auto;
+  margin-left: -25rem;
+  opacity: 1 !important;
+  margin-block-start: 0px;
+  margin-right: 0px;
+  right: 0;
+  max-width 60rem
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.hello {
+  background-image: url('../assets/home/banner/kv-001-1.jpg');
+  background-position bottom ;
+  color: white;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+  .container-home{
+    padding-bottom 90px
+    .col-form{
+      display flex
+      justify-content flex-end
+      padding 0px 
+    }
+  }
+}
+
+.list-title li {
+  font-size: 24px;
+  line-height 28px
+  font-weight 100
+  font-family Raleway-Regular
+}
+.list-title li::marker {
+  content:'- ';
+}
+
+.nav-link {
+  display: flex;
+  align-items: flex-end;
+}
+
+.home-banner {
+  max-width: 780px;
+}
+
+.init-date {
+  top: -44px;
+  position: relative;
+  right: 0px;
+  text-align: left;
+  width: 140px;
+  margin-right: 0px;
+  margin-left: auto;
+  font-family gt-pressura-bold;
+  font-size 28.53px;
+  line-height 44px
+}
+
+.section-areas-0 {
+  padding: 95px 0px;
+  background-image url('../assets/home/banner/section-areas/bg-001-1.png');
+  background-repeat: no-repeat;
+  background-size cover
+  border-bottom 4px solid primary-pee
+  h3{
+    margin 15px 0 0
+    font-size 39.82px
+    margin-bottom 30px
+    font-family gt-pressura-bold
+  }
+}
+.section{
+  padding: 105px 0px;
+  p{
+    font-size 24px
+    line-height 28.8px
+    margin-bottom 0px
+  }
+  h3{
+    margin 15px 0 0
+    font-size 39.82px
+    font-family gt-pressura-bold
+  }
+ 
+}
+.s-ventajas{
+  img{
+    max-width 337px
+    width 100%
+  }
+}
+.s-certificado{
+  background-color #E1E1E1
+  .container-inter{
+    padding-left 0px
+    padding-right 0px
+    &.c-row-inter{
+      display flex
+      justify-content space-between
+      flex-direction column
+      .col-option{
+        margin-bottom 40px
+        p{
+          text-align left
+        }
+      }
+    }
+
+  }
+  .box-option{
+    margin 0 auto
+    border-radius 100%
+    border 9.4px solid backg-footer
+    background-color white
+    height 220px
+    width 220px
+    display flex
+    justify-content center
+    align-items center
+    flex-direction row
+    .box-container{
+      width 176px
+      padding  0px
+      p{
+        font-size 18px
+        line-height 21.6px
+        text-align left
+        margin-bottom 0px
+      }
+      h2{
+        font-size 78.38px
+        margin-bottom 0px
+      }
+    }
+  }
+}
+
+.container-date {
+  border: 3px solid primary-pee;
+  max-width: 1046px;
+  width: 100%;
+  padding: 22px 0px;
+  min-height 190px
+  .div-section-content{
+    width 300px
+    margin-right 0px
+    margin-left auto
+  }
+}
+
+.section-areas-inicio {
+  background-color: black;
+  padding: 150px 0px !important;
+  .btn{
+    max-width 385px
+    width 100%
+    background-color primary-pee
+    color black
+    margin 33px auto 0px
+    text-align center
+    height 72px
+    font-size 37.82px
+    font-family GT-pressura-bold
+  }
+}
+
+.section-content {
+  padding: 50px 0px 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+    
+}
+
+.section-content2 {
+  padding: 20px 10px 10px 0px;
+  display: flex;
+  justify-content: left;
+
+  .section-2 {
+    width: 255px;
+    height: 64px;
+    margin-left 38px
+    span{
+      font-size 29.53px
+      color #252A2D
+      font-family GT-pressura-bold
+    }
+  }
+  
+  .section-1 {
+    font-size: 130px;
+    line-height: 182px;
+    margin-top: -68px;
+    font-family GT-pressura-bold
+  }
+  .init-date {
+    top: 10px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    width: 135px;
+    margin-right: 0px;
+    margin-left: auto;
+  }
+}
+
+.section-1 {
+  position: absolute;
+  z-index: 2;
+  width: 167px;
+  font-size: 170px;
+  margin-right: 282px;
+  margin-top: -117px;
+  font-weight: bold;
+  color: white;
+  font-family gt-pressura-bold
+}
+.init{
+  display flex
+  align-items center
+  justify-content center
+  span{
+      font-size 35.53px
+      color white
+      font-family GT-pressura-bold
+    }
+
+}
+
+.section-2 {
+  background-color: primary-pee;
+  font-size: 22px;
+  line-height: 35px;
+  position: relative;
+  z-index: 1;
+  text-align: right;
+  width: 304px;
+  padding-right: 10px;
+  font-weight: bold;
+  height: 50px;
+
+  span {
+    color: white;
+    top: -20px;
+  }
+}
+
+.contact {
+  border-left: 2px solid white;
+
+
+  .contact-container {
+    max-width: 380px;
+    color: white;
+    width: 100%;
+    margin-left 0px
+    padding-left 40px
+    text-align left
+    h5{
+      font-size 24px
+      font-family Raleway-Regular
+    }
+  }
+}
+
+.sect-rankings {
+  background-color: #252A2D;
+  padding: 100px 0px;
+  border-bottom 7px solid primary-pee
+  h1{
+    font-size 39.82px
+    color white
+    line-height 47px
+  }
+  .contain-sec{
+    padding-left value
+    max-width 1375px
+  } 
+  p {
+    color white
+    font-weight 100
+    font-family Raleway-Medium
+  }
+ 
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .contact {
+  border-left: 2px solid white;
+
+
+  .contact-container {
+    max-width: 380px;
+    h5{
+      font-size 20px
+      font-family Raleway-Regular
+    }
+  }
+}
+   .hello {
+      background-position bottom;
+      color: white;
+      background-size: cover;
+      .container-home{
+        padding-bottom 90px
+        .col-form{
+          display flex
+          justify-content center
+          margin-top 20px
+        }
+      }
+    }
+
+}
+@media  (max-width: 1560px) {
+
+  .flip-card-back {
+    background-color: bg-black;
+    transform: rotateY(180deg);
+    h2 {
+      font-size: 26.82px;
+      line-height 23.78px
+      margin-bottom 8px
+      }
+    p {
+      font-size 15px
+      line-height 16px
+      margin-bottom 0px
+    }  
+    strong {
+      font-size 26px
+      line-height 26px
+    }  
+  } 
+  .list-title {
+    li {
+      font-size: 21px;
+      line-height: 24px
+    }
+  }
+
+  h1 { 
+  font-size: 54px;
+  width: 100%;
+  line-height 62px
+  }
+
+  h2 {
+  font-size: 30px;
+  line-height 33px
+  margin-bottom 15px
+  }
+
+  .flip-card-front{
+    h2 {
+      font-size 30px
+    line-height 31px
+    }
+  }
+
+  .hello {
+    height: auto;
+    padding-bottom: 0px;
+  }
+
+  .section-2 {
+    width: 237px;
+    padding-right: 0px;
+  }
+
+  .section-1 {
+    margin-right: 215px;
+    font-size 162px
+    margin-top -110px
+    margin-left 20px
+  }
+}
+
+@media (max-width: 767px) {
+  .section-areas-0 { 
+  h3{
+    margin 15px 0 10px
+    font-size 29.82px
+  }
+  }
+  .section {
+    padding: 105px 0px;
+    p {
+      font-size 20px
+      line-height 24px
+      }
+    h3 {
+      font-size 26px
+      }
+  
+   };
+  .hello {
+    .container-home{
+      padding-bottom 0px
+      .ps-5 {
+        padding-left 1rem!important
+      }
+      .pe-5 {
+        padding-right 1rem!important
+      }
+      .col-form {
+            display flex
+            justify-content center
+            margin-top 30px
+            padding-bottom 20px
+      }
+      h1 {
+        font-size: 45px;
+      }
+
+      h2 {
+      font-size: 25px;
+      line-height 26px
+      } 
+      .section-content2 {
+        padding 20px 0px 10px
+        .init-date{
+          left 72px
+          right 0px
+          width auto
+          top 5px
+        }
+        .section-1{
+          font-size 86px
+          width auto
+        }
+        .section-2{
+          width 175px
+          height 50px
+          margin-left 29px
+          span{
+            font-size 21px
+          }
+        }
+      }   
+     }
+    }
+  .sect-rankings {
+    h1 {
+      font-size 28px
+      line-height 30px
+      margin-bottom 40px
+    }
+    img {
+      margin-bottom 20px
+    }
+  }  
+  .flip-card {
+    height: 28.2vh
+    }
+    .line {
+      width: auto;
+    }
+  .section-1 { 
+      margin-right: 124px;
+      margin-top: -50px;
+      font-size: 120.05px;
+      line-height: 132.41px
+    }
+  .section-2 {
+      width 180px
+      margin-left 40px
+      .init-date {
+        font-size 22px
+        width 98px
+        top -30px
+        line-height 34px
+      }
+
+  }
+  .s-ventajas {
+      img {
+        max-width  240px
+      width 100%   
+      }
+      
+    
+  }  
+  .container-date {
+      border: 3px solid primary-pee;
+      max-width: 1046px;
+      width: 100%;
+      padding: 15px 0px
+    .div-section-content{
+      max-width 300px
+      width 100%
+      margin auto
+    }
+    .contact {
+      border-left: none;
+      .contact-container {
+      max-width 230px
+      margin auto
+      padding 0
+      h5{
+        font-size 18px
+      }
+      img{
+        width 30px
+      }
+      }
+    } 
+   }
+  
+  
+    
+}
+@media (max-width: 575.98px) {
+  .list-title li {
+    
+      font-size: 18px;
+      line-height 20px
+      font-weight 100
+      font-family Raleway-Regular
+     
+ }
+ h4 {
+   font-size 20px
+ }
+ .init span {
+   font-size 29px
+ }
+ .hello {
+    .container-home{
+
+      .section-content2 {
+        .section-1{
+          margin-left -14px
+          font-size 74px
+        }
+        .section-2{
+          width 155px
+          height 50px
+          margin-left 13px
+          span{
+            font-size 20px
+          }
+        }
+        .init-date{
+          left: 44px
+        }
+      }   
+     }
+    }
+  .sect-rankings {
+    
+    img {
+      height 200px
+      width auto
+      &.logo-1 {
+        height auto
+        margin-top 35px
+      }
+    }
+  }   
+
+}
+  
+  
+
+
+     

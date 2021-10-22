@@ -1,0 +1,120 @@
+{
+  "title":"Administración y",
+  "title2":"dirección de personas",
+  "text-con":"Conferencia Informativa",
+  "bgColorDividerDate":"#9E8469" ,
+  "bgColorButtonDate":"#CE920F",
+  "bgColorDate":"#7D6247",
+  "lineColorCursos":"#CF9111",
+  "bgColorCursos":"#7E6247",
+  "lineColorPasos":"#A69079 ",
+  "bgColorPasos":"#7D6247",
+  "colorIcon":"administracion",      
+  "date":"10",
+  "month":"setiembre",
+  "dateTextSecond" : "Informativa",
+  "dateText":"Conferencia",
+  "buttonText":"Mira aquí el video",
+  "titleCurso":"Cursos del Certificado de Administración",
+  "cursos":[
+    {
+      "section": "Administración",
+      "curso": "Administración Gerencial: El Proceso Administrativo y sus Herramientas Claves de Gestión",
+      "teacher": "Enrique Louffat Olivares",
+      "horario": "Martes de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/administracion-gerencial-el-proceso-administrativo-y-sus-herramientas-claves-de-gestion/"
+    },
+    {
+      "section": "Administración ",
+      "curso": "Business Agility: planeamiento estratégico extendido",
+      "teacher": "Luis Fernández Aguilar",
+      "horario": "Martes de 7:30 p.m. a 10:45 p.m",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/business-agility-planeamiento-estrategico-extendido/"
+    },
+    {
+      "section": "Administración",
+      "curso": "Desarrollo de competencias gerenciales",
+      "teacher": "Lydia Arbaiza Fermini",
+      "horario": "Jueves de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/desarrollo-de-competencias-gerenciales/"
+    },
+    {
+      "section": "Administración",
+      "curso": "Desarrollo y gestión de cambios con herramientas ágiles",
+      "teacher": "Jessica Alzamora",
+      "horario": "Miércoles de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/desarrollo-y-gestion-de-cambios-con-herramientas-agiles/"
+    },
+    {
+      "section": "Administración",
+      "curso": "Diseño de estructuras organizacionales: de las funciones a los procesos agiles.",
+      "teacher": "Enrique Louffat Olivares",
+      "horario": "Viernes de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/diseno-de-estructuras-organizacionales-de-las-funciones-a-los-procesos-agiles/"
+    },
+    {
+      "section": "Administración",
+      "curso": "Gestión de proyectos",
+      "teacher": "Peter Yamakawa Tsuja",
+      "horario": "Miércoles de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/gestion-de-proyectos/"
+    },
+    {
+      "section": "Administración",
+      "curso": "Toma de decisiones aplicada a la gestión",
+      "teacher": "Luis Piazzón Gallo | Adriana Delgado",
+      "horario": "Viernes de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/administracion/toma-de-decisiones-aplicada-a-la-gestion/"
+    }
+  ],
+  "titleSecondCurso" : "Cursos del Certificado de Dirección de Personas",
+  "cursosSecond":[
+    {
+      "section": "Dirección de personas ",
+      "curso": "Estrategias y técnicas de negociación",
+      "teacher": "María Rosa Morán Macedo",
+      "horario": "Lunes de 7:30 a 10:45 p.m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/direccion-de-personas/estrategia-y-tecnicas-de-negociacion/"
+    },
+    {
+      "section": "Dirección de personas",
+      "curso": "Gestión del Potencial Humano por Indicadores",
+      "teacher": "Ricardo Aliaga Gastelumendi",
+      "horario": "Miércoles de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/direccion-de-personas/gestion-del-potencial-humano-por-indicadores/"
+    },
+    {
+      "section": "Dirección de personas",
+      "curso": "Gestión estratégica del talento humano",
+      "teacher": "Kety Jáuregui Machuca",
+      "horario": "Lunes de 7:30 a 10:45 p.m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/direccion-de-personas/gestion-estrategica-del-talento-humano/"
+    },
+    {
+      "section": "Dirección de personas",
+      "curso": "Neurociencia aplicada: Gerencia del estrés en tiempos de Covid y Post Covid",
+      "teacher": "Adriana Delgado",
+      "horario": "Martes de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/direccion-de-personas/neurociencia-aplicada-gerencia-del-estres-en-tiempos-de-covid-y-post-covid/"
+    },
+    {
+      "section": "Dirección de personas",
+      "curso": "Retorno sobre la Inversión aplicado a la Gestión de Personas",
+      "teacher": "Cinthia Vargas Figueroa",
+      "horario": "Miércoles de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/direccion-de-personas/retorno-sobre-la-inversion-aplicado-a-la-gestion-de-personas/"
+    },
+    {
+      "section": "Dirección de personas",
+      "curso": "Transformación digital aplicada a la gestión del talento humano",
+      "teacher": "Silvana María Pasquel Cook",
+      "horario": "Jueves de 7:30 p. m. a 10:45 p. m.",
+      "linkCurso":"https://www.esan.edu.pe/pee/areas/direccion-de-personas/transformacion-digital-aplicada-a-la-gestion-del-talento-humano/"
+    }
+  ],
+  "titlePasos":"Siguientes pasos",
+  "calendatioText":"calendario",
+  "informesText":"Informes",
+  "folletoText":"folleto",
+  "admisionText":"admisión"
+}
