@@ -10,7 +10,9 @@ import axios from 'axios'
 import VueMeta from 'vue-meta'
 Vue.config.productionTip = false;
 
-
+import excel from 'vue-excel-export'
+ 
+Vue.use(excel)
 
 
 import firebase from 'firebase/compat/app'

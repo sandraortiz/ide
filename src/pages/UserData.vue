@@ -44,6 +44,11 @@
           </table>
         </b-col>
       </b-row>
+      <b-row>
+        <export-excel worksheet = "Ide" class= "btn btn-default"  :fields = "json_fields" :data="usuarios">
+          Download Data
+        </export-excel>
+      </b-row>
     </b-container>
   </div>
 </template>
@@ -57,12 +62,16 @@ export default {
   data() {
     return {
       usuarios: [],
-      items: [
-        { age: 40, first_name: "Dickerson", last_name: "Macdonald" },
-        { age: 21, first_name: "Larsen", last_name: "Shaw" },
-        { age: 89, first_name: "Geneva", last_name: "Wilson" },
-        { age: 38, first_name: "Jami", last_name: "Carney" },
-      ],
+      json_fields:{
+        'Id':'id',
+        'Nombre' : 'name',
+        'Apellidos':'apellido',
+        'email':'email',
+        'celular':'celular',
+        'fecha':'fecha',
+        'hora':'hora'
+
+      }
     };
   },
 
@@ -85,7 +94,6 @@ export default {
         let usuario = doc.data();
         usuario.id = doc.id;
         this.usuarios.push(usuario);
-        // doc.data() is never undefined for query doc snapshots
         console.log(this.usuarios);
       });
     },

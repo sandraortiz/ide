@@ -129,7 +129,6 @@
 </template>
 
 <script>
-// import axios from "axios";
 import { collection, addDoc } from "firebase/firestore";
 
 import { db } from "../main";
@@ -142,97 +141,13 @@ export default {
         nombres: "",
         apellido: "",
         telefono: "",
-
         acepta_politica_de_privacidad: [],
       },
       show: true,
     };
   },
-  // mounted() {
-  //   this.loadHiddenFields();
-  //   axios
-  //     .get("https://www.esanbackoffice.com/world/api/countries/?limit=200")
-  //     .then((response) => (this.countries = response.data.results));
-  // },
-  computed: {
-    document_cookies: function () {
-      var key_values_list = document.cookie.split("; ");
-      var cookies_list = [];
-      for (let i = 0; i < key_values_list.length; i++) {
-        var current_key_and_value = key_values_list[i].split("=");
-        cookies_list.push({
-          key: current_key_and_value[0],
-          value: current_key_and_value[1],
-        });
-      }
-      return cookies_list;
-    },
-    nueva_procedencia: function () {
-      if (this.form.source != "") {
-        // 				this.addTrafficSourceToForm();
-        return this.form.source + "|>" + this.source_datetime + ")";
-      }
-      return "(cómo llegará a Formstack)";
-    },
-    procedencia: function () {
-      return this.getCookieWithName("traffic_source");
-    },
-    user_agent_uuid: function () {
-      // id = 'sdi_user_agent_uuid'
-      return this.getCookieWithName("user_agent_uuid");
-    },
-    source_datetime: function () {
-      var right_now = new Date();
-      var date_of_click = new Date(right_now.getTime() - 10 * 60 * 1000);
-      var currDate = date_of_click.getDate();
-      var hours = date_of_click.getHours();
-      var minutes = date_of_click.getMinutes();
-      var month = date_of_click.getMonth() + 1;
-      var year = date_of_click.getFullYear();
-      var ampm = hours >= 12 ? "pm" : "am";
-      hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' makes '12'
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      var strTime =
-        currDate +
-        "-" +
-        month +
-        "-" +
-        year +
-        " " +
-        hours +
-        ":" +
-        minutes +
-        " " +
-        ampm;
-      return strTime;
-    },
-  },
   methods: {
-    getCookieWithName(cookie_name) {
-      var matches = this.document_cookies.filter(function (el) {
-        return el.key == cookie_name;
-      });
-      if (matches.length > 0) {
-        return matches[0].value;
-      }
-      return "";
-    },
-    loadHiddenFields() {
-      var elValorDeLaProcedencia = this.procedencia;
-      if (this.input_source_manually && this.form.source != "") {
-        elValorDeLaProcedencia = this.nueva_procedencia;
-      }
-      this.payload.procedencia = elValorDeLaProcedencia;
-      this.payload.user_agent_uuid = this.user_agent_uuid;
-      this.payload.url_del_formulario = window.location.href;
-    },
     async sendInformationRequest() {
-      // this.sending = true;
-      // var information_request = {
-      //   timestamp: new Date().toJSON(),
-      //   payload: this.payload,
-      // };
       const f = new Date();
       const fechaformat =  f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
       const hora =   f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
@@ -247,53 +162,6 @@ export default {
 
       });
       console.log("Document written with ID: ", docRef.id);
-      // var limit = this.retry_sending_times;
-      // var attempts_count = this.attempted_sendings_count;
-      // var miliseconds_delay = this.seconds_before_next_attempt * 1000;
-      // axios
-      //   .post(
-      //     "https://www.esanbackoffice.com/websites/products/information-request/",
-      //     information_request
-      //   )
-      //   .then((response) => {
-      //     console.log(information_request);
-      //     if (response.data) {
-      //      window.location.href = "https://www.esan.edu.pe/pee/solicitud-de-informacion/gracias/";
-      //       this.sending = false;
-      //     } else {
-      //       if (attempts_count < limit) {
-      //         setTimeout(() => {
-      //           this.attempted_sendings_count = attempts_count + 1;
-      //           console.log(
-      //             this.attempted_sendings_count + " retry attempts.1"
-      //           );
-      //           this.sendInformationRequest();
-      //         }, miliseconds_delay);
-      //       } else {
-      //         alert(
-      //           "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.1"
-      //         ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
-      //         this.sending = false;
-      //         this.attempted_sendings_count = 0;
-      //       }
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     alert(error);
-      //     if (attempts_count < limit) {
-      //       setTimeout(() => {
-      //         this.attempted_sendings_count = attempts_count + 1;
-      //         console.log(this.attempted_sendings_count + " retry attempts.2");
-      //         this.sendInformationRequest();
-      //       }, miliseconds_delay);
-      //     } else {
-      //       alert(
-      //         "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.2"
-      //       ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
-      //       this.sending = false;
-      //       this.attempted_sendings_count = 0;
-      //     }
-      //   });
     },
     showModal() {
       this.$refs["my-modal"].show();
