@@ -15,11 +15,11 @@
           profesional.
         </p>
       </b-form-group>
-
+  
       <b-form-group class="all-btn" id="input-group-2" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="usuario.nombres"
+          v-model="payload.nombres"
           placeholder="Nombres"
           required
         ></b-form-input>
@@ -27,7 +27,7 @@
       <b-form-group class="all-btn" id="input-group-4" label-for="input-4">
         <b-form-input
           id="input-4"
-          v-model="usuario.apellido"
+          v-model="payload.apellido_paterno"
           placeholder="Apellidos"
           required
         ></b-form-input>
@@ -43,7 +43,7 @@
       <b-form-group class="all-btn" id="input-group-5" label-for="input-1">
         <b-form-input
           id="input-1"
-          v-model="usuario.email"
+          v-model="payload.correo_electrnico"
           type="email"
           placeholder="Correo electrónico"
           required
@@ -52,11 +52,12 @@
       <b-form-group class="all-btn" id="input-group-6" label-for="input-6">
         <b-form-input
           id="input-6"
-          v-model="usuario.telefono"
+          v-model="payload.telefono"
           placeholder="Teléfono"
           required
         ></b-form-input>
       </b-form-group>
+   
 
       <b-form-group
         class="all-btn"
@@ -64,7 +65,7 @@
         v-slot="{ ariaDescribedby }"
       >
         <b-form-checkbox-group
-          v-model="usuario.acepta_politica_de_privacidad"
+          v-model="payload.acepta_politica_de_privacidad"
           id="checkboxes-4"
           :aria-describedby="ariaDescribedby"
           required
@@ -129,23 +130,48 @@
 </template>
 
 <script>
-// import axios from "axios";
-import { collection, addDoc } from "firebase/firestore";
-
-import { db } from "../main";
+import axios from "axios";
 export default {
   data() {
     return {
       countryName: false,
-      usuario: {
-        email: "",
+      payload: {
+        pais_nacionalidad_iso3: "",
+        correo_electrnico: "",
         nombres: "",
-        apellido: "",
+        apellido_paterno: "",
+        numero_de_id: "",
         telefono: "",
-
+        cargo: "",
+        especialidad_o_concentracion: "",
         acepta_politica_de_privacidad: [],
+        ciudad: "LIMA", // debe inicializarse, aquí; en javascript después; o, en última instancia, presentar opciones en el HTML para que el usuario elija
+        programa: "PEE", // igual que *ciudad*
+        url_del_formulario: "", // se carga automáticamente
+        procedencia: "", // se carga automáticamente
+        user_agent_uuid: "", // se carga automáticamente
       },
+      areasdeInteres: [
+        { text: "¿Qué área te interesa?", value: "dasdasd" },
+        {
+          value: "Administración",
+          text: "Administración y Dirección de personas",
+        },
+        { value: "B2B", text: "Business to Business" },
+        "Energía",
+        "Finanzas",
+        "Marketing",
+        "Minería",
+        "Salud",
+        "Operaciones y Logística",
+        "Tecnologías de Información",
+      ],
+      countries: [],
       show: true,
+      sending: false,
+      retry_sending_times: 3,
+      attempted_sendings_count: 0,
+      seconds_before_next_attempt: 2,
     };
   },
   // mounted() {
@@ -227,73 +253,59 @@ export default {
       this.payload.user_agent_uuid = this.user_agent_uuid;
       this.payload.url_del_formulario = window.location.href;
     },
-    async sendInformationRequest() {
-      // this.sending = true;
-      // var information_request = {
-      //   timestamp: new Date().toJSON(),
-      //   payload: this.payload,
-      // };
-      const f = new Date();
-      const fechaformat =  f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
-      const hora =   f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
-      const docRef = await addDoc(collection(db, "informacion"), {
-
-        email: this.usuario.email,
-        name: this.usuario.nombres,
-        apellido: this.usuario.apellido,
-        celular: this.usuario.telefono,
-        fecha: fechaformat,
-        hora: hora
-
-      });
-      console.log("Document written with ID: ", docRef.id);
-      // var limit = this.retry_sending_times;
-      // var attempts_count = this.attempted_sendings_count;
-      // var miliseconds_delay = this.seconds_before_next_attempt * 1000;
-      // axios
-      //   .post(
-      //     "https://www.esanbackoffice.com/websites/products/information-request/",
-      //     information_request
-      //   )
-      //   .then((response) => {
-      //     console.log(information_request);
-      //     if (response.data) {
-      //      window.location.href = "https://www.esan.edu.pe/pee/solicitud-de-informacion/gracias/";
-      //       this.sending = false;
-      //     } else {
-      //       if (attempts_count < limit) {
-      //         setTimeout(() => {
-      //           this.attempted_sendings_count = attempts_count + 1;
-      //           console.log(
-      //             this.attempted_sendings_count + " retry attempts.1"
-      //           );
-      //           this.sendInformationRequest();
-      //         }, miliseconds_delay);
-      //       } else {
-      //         alert(
-      //           "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.1"
-      //         ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
-      //         this.sending = false;
-      //         this.attempted_sendings_count = 0;
-      //       }
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     alert(error);
-      //     if (attempts_count < limit) {
-      //       setTimeout(() => {
-      //         this.attempted_sendings_count = attempts_count + 1;
-      //         console.log(this.attempted_sendings_count + " retry attempts.2");
-      //         this.sendInformationRequest();
-      //       }, miliseconds_delay);
-      //     } else {
-      //       alert(
-      //         "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.2"
-      //       ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
-      //       this.sending = false;
-      //       this.attempted_sendings_count = 0;
-      //     }
-      //   });
+    sendInformationRequest() {
+      this.sending = true;
+      var information_request = {
+        timestamp: new Date().toJSON(),
+        payload: this.payload,
+      };
+      var limit = this.retry_sending_times;
+      var attempts_count = this.attempted_sendings_count;
+      var miliseconds_delay = this.seconds_before_next_attempt * 1000;
+      axios
+        .post(
+          "https://www.esanbackoffice.com/websites/products/information-request/",
+          information_request
+        )
+        .then((response) => {
+          console.log(information_request);
+          if (response.data) {
+           window.location.href = "https://www.esan.edu.pe/pee/solicitud-de-informacion/gracias/";
+            this.sending = false;
+          } else {
+            if (attempts_count < limit) {
+              setTimeout(() => {
+                this.attempted_sendings_count = attempts_count + 1;
+                console.log(
+                  this.attempted_sendings_count + " retry attempts.1"
+                );
+                this.sendInformationRequest();
+              }, miliseconds_delay);
+            } else {
+              alert(
+                "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.1"
+              ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
+              this.sending = false;
+              this.attempted_sendings_count = 0;
+            }
+          }
+        })
+        .catch((error) => {
+          alert(error);
+          if (attempts_count < limit) {
+            setTimeout(() => {
+              this.attempted_sendings_count = attempts_count + 1;
+              console.log(this.attempted_sendings_count + " retry attempts.2");
+              this.sendInformationRequest();
+            }, miliseconds_delay);
+          } else {
+            alert(
+              "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.2"
+            ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
+            this.sending = false;
+            this.attempted_sendings_count = 0;
+          }
+        });
     },
     showModal() {
       this.$refs["my-modal"].show();
@@ -307,8 +319,8 @@ export default {
     accept() {
       const data = ["0"];
       this.$refs["my-modal"].toggle("#toggle-btn");
-      this.usuario.acepta_politica_de_privacidad =
-        this.usuario.acepta_politica_de_privacidad.concat(data);
+      this.payload.acepta_politica_de_privacidad =
+        this.payload.acepta_politica_de_privacidad.concat(data);
     },
   },
 };

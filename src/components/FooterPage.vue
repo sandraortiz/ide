@@ -59,7 +59,7 @@
                 <router-link
                   class="nav-link"
                   :to="{
-                    name: 'administracion_page',
+                    name: 'login_page',
                   }"
                 >
                   Login
