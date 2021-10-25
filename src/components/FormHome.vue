@@ -15,45 +15,11 @@
           profesional.
         </p>
       </b-form-group>
-      <b-form-group class="all-btn" id="input-group-3" label-for="input-3">
-        <!-- <b-form-select
-          id="input-3"
-          v-model="payload.especialidad_o_concentracion"
-          :options="areasdeInteres"
-          required
-        ></b-form-select> -->
-
-        <select
-          class="form-select"
-          aria-label="ciudad_de_residencia"
-          name="ciudad_de_residencia"
-          id="input-3"
-          v-model="payload.especialidad_o_concentracion"
-          required
-        >
-          <option value="">¿Qué área te interesa?</option>
-          <option value="Administración">
-            Administración y Dirección de personas
-          </option>
-          <option value="B2B">Business to Business</option>
-          <option value="Energía">Energía</option>
-          <option value="Finanzas">Finanzas</option>
-          <option value="Marketing">Marketing</option>
-          <option value="Minería">Minería</option>
-          <option value="Salud">Salud</option>
-          <option value="Operaciones y Logística">
-            Operaciones y Logística
-          </option>
-          <option value="Tecnologías de la Información">
-            Tecnologías de la Información
-          </option>
-        </select>
-      </b-form-group>
 
       <b-form-group class="all-btn" id="input-group-2" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="payload.nombres"
+          v-model="usuario.nombres"
           placeholder="Nombres"
           required
         ></b-form-input>
@@ -61,23 +27,23 @@
       <b-form-group class="all-btn" id="input-group-4" label-for="input-4">
         <b-form-input
           id="input-4"
-          v-model="payload.apellido_paterno"
+          v-model="usuario.apellido"
           placeholder="Apellidos"
           required
         ></b-form-input>
       </b-form-group>
-      <b-form-group class="all-btn" id="input-group-1" label-for="input-1">
+      <!-- <b-form-group class="all-btn" id="input-group-1" label-for="input-1">
         <b-form-input
           id="input-1"
           v-model="payload.numero_de_id"
           placeholder="DNI"
           required
         ></b-form-input>
-      </b-form-group>
+      </b-form-group> -->
       <b-form-group class="all-btn" id="input-group-5" label-for="input-1">
         <b-form-input
           id="input-1"
-          v-model="payload.correo_electrnico"
+          v-model="usuario.email"
           type="email"
           placeholder="Correo electrónico"
           required
@@ -86,57 +52,19 @@
       <b-form-group class="all-btn" id="input-group-6" label-for="input-6">
         <b-form-input
           id="input-6"
-          v-model="payload.telefono"
+          v-model="usuario.telefono"
           placeholder="Teléfono"
           required
         ></b-form-input>
       </b-form-group>
-      <b-form-group class="all-btn" id="input-group-7" label-for="input-7">
-        <b-form-input
-          id="input-7"
-          v-model="payload.cargo"
-          placeholder="Cargo"
-          required
-        ></b-form-input>
-      </b-form-group>
-      <b-form-group class="all-btn">
-        <select
-          class="form-select"
-          aria-label="ciudad_de_residencia"
-          name="ciudad_de_residencia"
-          id="input-3"
-          v-model="payload.pais_nacionalidad_iso3"
-          required
-        >
-          <option value="">-Seleccione su país-</option>
-           <option
-            v-for="country in countries"
-            :value="country.iso3_code"
-            :key="country.id"
-          >
-            {{ country.short_name }}
-          </option>
-        </select>
 
-        <!-- <select v-model="payload.pais_nacionalidad_iso3" required>
-          <option selected disabled hidden>Choose a Color</option>
-         <option value="seleccione su pais" selected>-Seleccione su país-</option>
-          <option
-            v-for="country in countries"
-            :value="country.iso3_code"
-            :key="country.id"
-          >
-            {{ country.short_name }}
-          </option>
-        </select> -->
-      </b-form-group>
       <b-form-group
         class="all-btn"
         id="input-group-12"
         v-slot="{ ariaDescribedby }"
       >
         <b-form-checkbox-group
-          v-model="payload.acepta_politica_de_privacidad"
+          v-model="usuario.acepta_politica_de_privacidad"
           id="checkboxes-4"
           :aria-describedby="ariaDescribedby"
           required
@@ -201,182 +129,39 @@
 </template>
 
 <script>
-import axios from "axios";
+import { collection, addDoc } from "firebase/firestore";
+
+import { db } from "../main";
 export default {
   data() {
     return {
       countryName: false,
-      payload: {
-        pais_nacionalidad_iso3: "",
-        correo_electrnico: "",
+      usuario: {
+        email: "",
         nombres: "",
-        apellido_paterno: "",
-        numero_de_id: "",
+        apellido: "",
         telefono: "",
-        cargo: "",
-        especialidad_o_concentracion: "",
         acepta_politica_de_privacidad: [],
-        ciudad: "LIMA", // debe inicializarse, aquí; en javascript después; o, en última instancia, presentar opciones en el HTML para que el usuario elija
-        programa: "PEE", // igual que *ciudad*
-        url_del_formulario: "", // se carga automáticamente
-        procedencia: "", // se carga automáticamente
-        user_agent_uuid: "", // se carga automáticamente
       },
-      areasdeInteres: [
-        { text: "¿Qué área te interesa?", value: "dasdasd" },
-        {
-          value: "Administración",
-          text: "Administración y Dirección de personas",
-        },
-        { value: "B2B", text: "Business to Business" },
-        "Energía",
-        "Finanzas",
-        "Marketing",
-        "Minería",
-        "Salud",
-        "Operaciones y Logística",
-        "Tecnologías de Información",
-      ],
-      countries: [],
       show: true,
-      sending: false,
-      retry_sending_times: 3,
-      attempted_sendings_count: 0,
-      seconds_before_next_attempt: 2,
     };
   },
-  mounted() {
-    this.loadHiddenFields();
-    axios
-      .get("https://www.esanbackoffice.com/world/api/countries/?limit=200")
-      .then((response) => (this.countries = response.data.results));
-  },
-  computed: {
-    document_cookies: function () {
-      var key_values_list = document.cookie.split("; ");
-      var cookies_list = [];
-      for (let i = 0; i < key_values_list.length; i++) {
-        var current_key_and_value = key_values_list[i].split("=");
-        cookies_list.push({
-          key: current_key_and_value[0],
-          value: current_key_and_value[1],
-        });
-      }
-      return cookies_list;
-    },
-    nueva_procedencia: function () {
-      if (this.form.source != "") {
-        // 				this.addTrafficSourceToForm();
-        return this.form.source + "|>" + this.source_datetime + ")";
-      }
-      return "(cómo llegará a Formstack)";
-    },
-    procedencia: function () {
-      return this.getCookieWithName("traffic_source");
-    },
-    user_agent_uuid: function () {
-      // id = 'sdi_user_agent_uuid'
-      return this.getCookieWithName("user_agent_uuid");
-    },
-    source_datetime: function () {
-      var right_now = new Date();
-      var date_of_click = new Date(right_now.getTime() - 10 * 60 * 1000);
-      var currDate = date_of_click.getDate();
-      var hours = date_of_click.getHours();
-      var minutes = date_of_click.getMinutes();
-      var month = date_of_click.getMonth() + 1;
-      var year = date_of_click.getFullYear();
-      var ampm = hours >= 12 ? "pm" : "am";
-      hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' makes '12'
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      var strTime =
-        currDate +
-        "-" +
-        month +
-        "-" +
-        year +
-        " " +
-        hours +
-        ":" +
-        minutes +
-        " " +
-        ampm;
-      return strTime;
-    },
-  },
   methods: {
-    getCookieWithName(cookie_name) {
-      var matches = this.document_cookies.filter(function (el) {
-        return el.key == cookie_name;
+    async sendInformationRequest() {
+      const f = new Date();
+      const fechaformat =  f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
+      const hora =   f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
+      const docRef = await addDoc(collection(db, "informacion"), {
+
+        email: this.usuario.email,
+        name: this.usuario.nombres,
+        apellido: this.usuario.apellido,
+        celular: this.usuario.telefono,
+        fecha: fechaformat,
+        hora: hora
+
       });
-      if (matches.length > 0) {
-        return matches[0].value;
-      }
-      return "";
-    },
-    loadHiddenFields() {
-      var elValorDeLaProcedencia = this.procedencia;
-      if (this.input_source_manually && this.form.source != "") {
-        elValorDeLaProcedencia = this.nueva_procedencia;
-      }
-      this.payload.procedencia = elValorDeLaProcedencia;
-      this.payload.user_agent_uuid = this.user_agent_uuid;
-      this.payload.url_del_formulario = window.location.href;
-    },
-    sendInformationRequest() {
-      this.sending = true;
-      var information_request = {
-        timestamp: new Date().toJSON(),
-        payload: this.payload,
-      };
-      var limit = this.retry_sending_times;
-      var attempts_count = this.attempted_sendings_count;
-      var miliseconds_delay = this.seconds_before_next_attempt * 1000;
-      axios
-        .post(
-          "https://www.esanbackoffice.com/websites/products/information-request/",
-          information_request
-        )
-        .then((response) => {
-          console.log(information_request);
-          if (response.data) {
-           window.location.href = "https://www.esan.edu.pe/pee/solicitud-de-informacion/gracias/";
-            this.sending = false;
-          } else {
-            if (attempts_count < limit) {
-              setTimeout(() => {
-                this.attempted_sendings_count = attempts_count + 1;
-                console.log(
-                  this.attempted_sendings_count + " retry attempts.1"
-                );
-                this.sendInformationRequest();
-              }, miliseconds_delay);
-            } else {
-              alert(
-                "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.1"
-              ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
-              this.sending = false;
-              this.attempted_sendings_count = 0;
-            }
-          }
-        })
-        .catch((error) => {
-          alert(error);
-          if (attempts_count < limit) {
-            setTimeout(() => {
-              this.attempted_sendings_count = attempts_count + 1;
-              console.log(this.attempted_sendings_count + " retry attempts.2");
-              this.sendInformationRequest();
-            }, miliseconds_delay);
-          } else {
-            alert(
-              "Hubo un error. Inténtalo de nuevo en unos minutos, por favor.2"
-            ); // en lugar de una alerta, puede ser más claro para el usuario levantar un modal
-            this.sending = false;
-            this.attempted_sendings_count = 0;
-          }
-        });
+      console.log("Document written with ID: ", docRef.id);
     },
     showModal() {
       this.$refs["my-modal"].show();
@@ -390,8 +175,8 @@ export default {
     accept() {
       const data = ["0"];
       this.$refs["my-modal"].toggle("#toggle-btn");
-      this.payload.acepta_politica_de_privacidad =
-        this.payload.acepta_politica_de_privacidad.concat(data);
+      this.usuario.acepta_politica_de_privacidad =
+        this.usuario.acepta_politica_de_privacidad.concat(data);
     },
   },
 };

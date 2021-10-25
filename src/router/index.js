@@ -1,9 +1,7 @@
 import Vue from 'vue'
-
-import AdministrationPage from "../pages/AdministrationPage"
-
+import LoginPage from "../pages/LoginPage"
 import Gracias from "../pages/menuPages/Gracias"
-
+import UserData from "../pages/UserData"
 import HomeView from "../views/HomeView"
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -21,9 +19,14 @@ export default new VueRouter({
     },
    
     {
-      path: "/administracion",
-      name: "administracion_page",
-      component: AdministrationPage,
+      path: "/login",
+      name: "login_page",
+      component: LoginPage,
+    },
+    {
+      path: "/data",
+      name: "data_page",
+      component: UserData,
     },
   ]
 })
