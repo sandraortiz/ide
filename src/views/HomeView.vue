@@ -215,7 +215,7 @@
           <b-col class="mt-5">
             <div class="content-subtitle ">
               <div class="img-number">
-              <img src="../assets/home/areas/salud/kv-1.jpg" alt="" >
+              <img src="../assets/home/numbers/1.png" alt="" >
             </div>
             <div class="subtitles">
               Profesores
@@ -286,13 +286,13 @@ export default {
         myOptions: {
             navButtons: false,
             slidesToShow: 1,
+            autoplay:true,
             
             responsive: [
                
                 {
                     breakpoint: 800,
                     settings: {
-                        dots: false,
                         slidesToShow: 3,
                     }
                 },
@@ -337,12 +337,16 @@ const $ = require('jquery');
   font-weight bold;
   padding-bottom 60px;
   position absolute;
-  display: inline-block
+  display: inline-block;
+  z-index 2;
+  top:0px;
 }
 .img-number{
-  position:absolute;
+  position:relative;
   top: -220px;
-  left: 0px
+  left: 0px; 
+  z-index 1
+
 }
 .areas-section {
   padding 120px 0px
@@ -355,6 +359,7 @@ const $ = require('jquery');
   .content-subtitle{
     position relative;
     display inline-block;
+   height: 60px
   }
   .profesor-1{
     background-image: url('../assets/home/areas/salud/kv-1.jpg')!important;

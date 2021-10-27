@@ -28,6 +28,7 @@
                 <th scope="col">Celular</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Hora</th>
+                <th scope="col">Area</th>
               </tr>
             </thead>
             <tbody>
@@ -39,13 +40,19 @@
                 <td>{{ item.celular }}</td>
                 <td>{{ item.fecha }}</td>
                 <td>{{ item.hora }}</td>
+                <td>{{ item.area }}</td>
               </tr>
             </tbody>
           </table>
         </b-col>
       </b-row>
       <b-row>
-        <export-excel worksheet = "Ide" class= "btn btn-default"  :fields = "json_fields" :data="usuarios">
+        <export-excel
+          worksheet="Ide"
+          class="btn btn-default"
+          :fields="json_fields"
+          :data="usuarios"
+        >
           Download Data
         </export-excel>
       </b-row>
@@ -62,16 +69,16 @@ export default {
   data() {
     return {
       usuarios: [],
-      json_fields:{
-        'Id':'id',
-        'Nombre' : 'name',
-        'Apellidos':'apellido',
-        'email':'email',
-        'celular':'celular',
-        'fecha':'fecha',
-        'hora':'hora'
-
-      }
+      json_fields: {
+        Id: "id",
+        Nombre: "name",
+        Apellidos: "apellido",
+        email: "email",
+        celular: "celular",
+        fecha: "fecha",
+        hora: "hora",
+        Area: "Area",
+      },
     };
   },
 
