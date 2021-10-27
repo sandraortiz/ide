@@ -15,7 +15,26 @@
           profesional.
         </p>
       </b-form-group>
-
+      <b-form-group class="all-btn" id="input-group-3" label-for="input-3">
+        <select
+          class="form-select"
+          aria-label="ciudad_de_residencia"
+          name="ciudad_de_residencia"
+          id="input-3"
+          v-model="usuario.area"
+          required
+        >
+          <option value="">¿Qué área te interesa?</option>
+          <option value="Aeronáutica agricola">Aeronáutica agricola</option>
+          <option value="Alimentaria">
+            Alimentaria
+          </option>
+          <option value="Pesca y agricultura">Pesca y agricultura</option>
+          <option value="Turismo rural">Turismo rural</option>
+          <option value="Veterinaria">Veterinaria</option>
+        
+        </select>
+      </b-form-group>
       <b-form-group class="all-btn" id="input-group-2" label-for="input-2">
         <b-form-input
           id="input-2"
@@ -141,6 +160,7 @@ export default {
         nombres: "",
         apellido: "",
         telefono: "",
+        area:"",
         acepta_politica_de_privacidad: [],
       },
       show: true,
@@ -149,17 +169,17 @@ export default {
   methods: {
     async sendInformationRequest() {
       const f = new Date();
-      const fechaformat =  f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
-      const hora =   f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
+      const fechaformat =
+        f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
+      const hora = f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds();
       const docRef = await addDoc(collection(db, "informacion"), {
-
         email: this.usuario.email,
         name: this.usuario.nombres,
         apellido: this.usuario.apellido,
         celular: this.usuario.telefono,
         fecha: fechaformat,
-        hora: hora
-
+        hora: hora,
+        area:this.usuario.area
       });
       console.log("Document written with ID: ", docRef.id);
     },
