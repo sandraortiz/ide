@@ -254,8 +254,93 @@
         
       </b-container>
     </section>
- 
-    
+      <section class="certificate-section">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="semicirculo mb-5">
+                a
+              </div>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col >
+              <div class="content-subtitle ">
+              
+            <div class="subtitles">
+              Profesores
+            </div>
+            <div class="img-number text-right">
+              <img src="../assets/home/numbers/1.png" alt="" >
+            </div>
+            </div>
+            </b-col>
+          </b-row>
+        </b-container>
+
+      </section>
+      <section class="three-section">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="semicirculo mb-5">
+                a
+              </div>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <div class="content-subtitle ">
+              <div class="img-number">
+              <img src="../assets/home/numbers/1.png" alt="" >
+            </div>
+            <div class="subtitles">
+              Profesores
+            </div>
+            </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
+     <section class="four-section">
+        <b-container>
+          <b-row>
+            <b-col>
+              <div class="semicirculo mb-5">
+                a
+              </div>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col >
+              <div class="content-subtitle ">
+                
+              <div class="subtitles">
+                <b-container >
+                <b-row>
+                  <b-col>
+                      <div>
+
+                        dsksldmksamdklsmdlk
+                      </div>
+                  </b-col>
+                  <b-col>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt dignissimos 
+                      recusandae accusantium repellendus qui provident molestiae veritatis. Velit fuga, 
+                      quam provident sapiente assumenda veritatis nobis aliquid beatae quae non mollitia?</p>
+                  </b-col>
+                </b-row>
+              </b-container>
+              </div>
+              <div class="img-number">
+              <img src="../assets/home/numbers/1.png" alt="" >
+            </div>
+            </div>
+            </b-col>
+          </b-row>
+        </b-container>
+
+      </section>
  
  
     <FooterPage />
@@ -321,16 +406,13 @@ const $ = require('jquery');
 <style lang="stylus" scoped>
 @import '../styles/home.styl';
 
-.BackTo {
-  display none;
-  background-color pink
-}
-
-.BackTo a {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 2px;
+.semicirculo {
+  height: 30px;
+  width: 60px;
+  background: #0074d9;
+  border-radius: 50% /  0 0 100% 100%;
+  margin auto;
+  text-align center
 }
 .subtitles{
   font-size 32px;
@@ -340,6 +422,8 @@ const $ = require('jquery');
   display: inline-block;
   z-index 2;
   top:0px;
+  text-align center;
+  width 100%
 }
 .img-number{
   position:relative;
@@ -359,7 +443,8 @@ const $ = require('jquery');
   .content-subtitle{
     position relative;
     display inline-block;
-   height: 60px
+   height: 60px;
+   width 100%;
   }
   .profesor-1{
     background-image: url('../assets/home/areas/salud/kv-1.jpg')!important;
@@ -376,5 +461,40 @@ const $ = require('jquery');
   .profesor-5{
     background-image: url('../assets/home/areas/salud/kv-1.jpg')!important;
   }
+}
+.certificate-section{
+  overflow hidden;
+  .img-number{
+  position:relative;
+  top: -120px;
+  z-index 1;
+  img{
+    right: 0px; 
+  }
+
+}
+  .content-subtitle{
+    width 100%
+  }
+  
+}
+.three-section{
+   overflow hidden;
+}
+.four-section{
+  overflow hidden;
+  .img-number{
+  position:relative;
+  top: -120px;
+  z-index 1;
+  img{
+    right: 0px; 
+  }
+
+}
+  .content-subtitle{
+    width 100%
+  }
+  
 }
 </style>
