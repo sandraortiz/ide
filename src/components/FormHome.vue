@@ -26,13 +26,10 @@
         >
           <option value="">¿Qué área te interesa?</option>
           <option value="Aeronáutica agricola">Aeronáutica agricola</option>
-          <option value="Alimentaria">
-            Alimentaria
-          </option>
+          <option value="Alimentaria">Alimentaria</option>
           <option value="Pesca y agricultura">Pesca y agricultura</option>
           <option value="Turismo rural">Turismo rural</option>
           <option value="Veterinaria">Veterinaria</option>
-        
         </select>
       </b-form-group>
       <b-form-group class="all-btn" id="input-group-2" label-for="input-2">
@@ -51,14 +48,6 @@
           required
         ></b-form-input>
       </b-form-group>
-      <!-- <b-form-group class="all-btn" id="input-group-1" label-for="input-1">
-        <b-form-input
-          id="input-1"
-          v-model="payload.numero_de_id"
-          placeholder="DNI"
-          required
-        ></b-form-input>
-      </b-form-group> -->
       <b-form-group class="all-btn" id="input-group-5" label-for="input-1">
         <b-form-input
           id="input-1"
@@ -144,6 +133,7 @@
         </b-row>
       </b-container>
     </b-modal>
+
   </div>
 </template>
 
@@ -152,6 +142,9 @@ import { collection, addDoc } from "firebase/firestore";
 
 import { db } from "../main";
 export default {
+  props: {
+    name1: String,
+  },
   data() {
     return {
       countryName: false,
@@ -160,7 +153,7 @@ export default {
         nombres: "",
         apellido: "",
         telefono: "",
-        area:"",
+        area: "",
         acepta_politica_de_privacidad: [],
       },
       show: true,
@@ -179,7 +172,7 @@ export default {
         celular: this.usuario.telefono,
         fecha: fechaformat,
         hora: hora,
-        area:this.usuario.area
+        area: this.usuario.area,
       });
       console.log("Document written with ID: ", docRef.id);
     },
@@ -197,6 +190,19 @@ export default {
       this.$refs["my-modal"].toggle("#toggle-btn");
       this.usuario.acepta_politica_de_privacidad =
         this.usuario.acepta_politica_de_privacidad.concat(data);
+    },
+    // select() {
+    //   // var bus = new Vue();
+    //   this.$root.$emit("cool_event_name", this.usuario.area);
+    // },
+  },
+  // mounted() {
+  //   this.select();
+  // },
+  computed: {
+    select() {
+      // var bus = new Vue();
+      return this.$root.$emit("cool_event_name", this.usuario.area);
     },
   },
 };
