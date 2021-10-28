@@ -7,6 +7,8 @@ import router from './router'
 import './styles/main.styl'
 import vueCountryRegionSelect from 'vue-country-region-select'
 import axios from 'axios'
+import VueAgile from "vue-agile"
+Vue.use(VueAgile)
 import VueMeta from 'vue-meta'
 Vue.config.productionTip = false;
 
