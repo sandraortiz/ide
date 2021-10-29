@@ -124,8 +124,9 @@ export default {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: backg-footer;
+  background-color: primary-ide;
   color: white;
+  
 }
 
 .data {

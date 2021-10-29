@@ -1,5 +1,9 @@
 /* eslint-disable */
-@import '../styles/main.styl';
+@import 'main.styl'
+*{
+  color white
+}
+
 .v-01
   content url("../assets/home/iconos/ventajas/v-01.png")
 .v-02 
@@ -69,37 +73,7 @@
       line-height 34.78px;
       text-transform initial
     };
-    &.bg-salud{
-     background-image: url('../assets/home/areas/salud/kv-1.jpg')!important;
-    };
-    &.bg-energia{
-     background-image: url('../assets/home/areas/energia/kv-1.jpg')!important;
-    };
-   
-    &.bg-finanzas{
-     background-image: url('../assets/home/areas/finanzas/kv-1.jpg')!important;
-    }
-    &.bg-administracion{
-     background-image: url('../assets/home/areas/administracion/kv-1.jpg')!important;
-    }
-    &.bg-b2b{
-     background-image: url('../assets/home/areas/b2b/kv-1.jpg')!important;
-    }
-    &.bg-marketing{
-     background-image: url('../assets/home/areas/marketing/kv-1.jpg')!important;
-    }
-    &.bg-ti{
-     background-image: url('../assets/home/areas/ti/kv-1.jpg')!important;
-    };
-    &.bg-mineria{
-     background-image: url('../assets/home/areas/mineria/kv-1.jpg')!important;
-    };
-    &.bg-logistica{
-     background-image: url('../assets/home/areas/logistica/kv-1.jpg')!important;
-    };
-    &.bg-logistica{
-     background-image: url('../assets/home/areas/logistica/kv.jpg')!important;
-    };
+ 
 }
 
 .flip-card-back 
@@ -186,7 +160,7 @@
   border-width: 0px !important;
   -webkit-box-shadow: 0px 0px !important;
   box-shadow: 0px 0px !important;
-  background-color: rgba(0, 0, 0, 0) !important;
+  background-color: #DC0933;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))) !important;
   background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%) !important;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%) !important;
@@ -278,16 +252,15 @@ h4{
 
 .hello {
   background-image: url('../assets/home/banner/kv-001-1.jpg');
-  background-position bottom ;
+  background-position top left ;
   color: white;
-  height: auto;
+  height: 89vh;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between
   .container-home{
-    padding-bottom 90px
     .col-form{
       display flex
       justify-content flex-end
@@ -555,6 +528,150 @@ h4{
     font-family Raleway-Medium
   }
  
+}
+.profesores-section {
+  background-color: g-color;
+  padding: 120px 0px;
+  overflow: hidden;
+
+  .content-subtitle {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 100%;
+  }
+  .img-number{
+    top: -122px;
+    left: -180px
+  }
+  .slide{
+    text-align center
+    h3{
+      font-size 25px;
+      font-family Raleway-Bold
+    }
+    p{
+      font-size 25px;
+      font-family Raleway-Regular
+    }
+  
+  }
+  .agile{
+    margin-bottom 100px;
+    
+    
+  }
+  .agile__nav-button{
+      border-radius 50px
+    }
+  .agile__actions{
+    margin-bottom 1000px
+  }
+  
+  
+}
+.certificate-section {
+  overflow: hidden;
+  background-image url('../assets/home/sections/certificate/kv.jpg');
+  color: white;
+  background-position bottom center
+  background-size: cover;
+  background-repeat: no-repeat;
+  .subtitles{
+    font-size 30px
+  }
+  .semicirculo{
+    background: g-color;
+  }
+  .img-number {
+    position: relative;
+    top: -75px;
+    z-index: 1;
+    left: 110px
+    
+
+    img {
+      right: 0px;
+    }
+  }
+
+  .content-subtitle {
+    width: 100%;
+  }
+}
+.three-section {
+  overflow: hidden;
+  background-color: primary-ide
+  .subtitles{
+    font-size 30px
+  }
+  .semicirculo{
+    background: black;
+  }
+  .img-number{
+    left -180px
+  }
+}
+
+.four-section {
+  overflow: hidden;
+  .semicirculo{
+    background: primary-ide;
+  }
+  .img-number {
+    position: relative;
+    top: -59px;
+    left: 110px;
+    z-index: 1;
+    color: rgba(220, 9, 51, 0.3)
+
+    img {
+      right: 0px;
+    }
+  }
+  p{
+    color g-color;
+    text-align justify;
+    font-size 25px;
+    line-height 30px;
+    font-weight normal;
+    text-transform none; 
+    font-family Raleway-Regular
+  }
+  h3{
+    font-family gt-pressura-bold;
+    font-size 30px;
+    color g-color;
+    text-align left
+  }
+
+  .content-subtitle {
+    width: 100%;
+  }
+}
+.networking-section {
+  overflow: hidden;
+  background-image url('../assets/home/sections/networking/kv.jpg');
+  .semicirculo{
+    background: white;
+  }
+  .img-number {
+    position: relative;
+    top: -59px;
+    z-index: 1;
+    left: -180px
+
+    img {
+      right: 0px;
+    }
+  }
+  .subtitles{
+    font-size 30px
+  }
+
+  .content-subtitle {
+    width: 100%;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px){
   .contact {

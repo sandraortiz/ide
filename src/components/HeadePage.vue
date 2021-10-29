@@ -106,15 +106,16 @@ export default {
 
 .button-nav {
   padding: 10px 25px 10px 25px;
-  background-color: primary-pee;
+  background-color: primary-ide;
   color: black;
   font-family: gt-pressura-bold;
   font-size: 18px;
+  border-radius: 20px !important
 }
 
 .nav {
-  background-color: bg-black !important;
-  padding: 30px 0px;
+  background-color: primary-ide !important;
+  padding: 12px 0px;
 }
 
 .router-link-active {
