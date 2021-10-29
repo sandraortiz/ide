@@ -1,15 +1,14 @@
 <template>
   <div>
     <section style="border-bottom: none !important">
-      <b-container fluid class="bv-example-row hello">
-        <b-row>
-          <b-col>
+    
             <HeadePage />
-          </b-col>
-        </b-row>
+        
+      <b-container fluid class="bv-example-row hello">
+        
 
-        <b-row>
-          <b-col cols="12 ps-0 pe-0">
+        <b-row class="h-100">
+          <b-col cols="12 ps-0 pe-0" class="h-100 d-flex align-items-end">
             <b-container class="ps-0 pe-0 container-home">
               <b-row>
                 <b-col
@@ -26,23 +25,14 @@
                         flex-column
                       "
                     >
-                      <h1>PEE ONLINE</h1>
+                      <h1>LOREM IPSUM
+SIC AMET </h1>
                       <h2>PROGRAMA DE ESPECIALIZACIÓN PARA EJECUTIVOS</h2>
                     </div>
-                    <hr class="line" />
-                    <h4>Conoce nuestras 9 áreas</h4>
-                    <ul class="list-title">
-                      <li>Administración y Dirección de Personas</li>
-                      <li>B2B</li>
-                      <li>Finanzas</li>
-                      <li>Energía</li>
-                      <li>Marketing</li>
-                      <li>Minería</li>
-                      <li>Operaciones y Logística</li>
-
-                      <li>Salud</li>
-                      <li>Tecnologías de Información</li>
-                    </ul>
+                    <h4>Subtítulo lorem ipsum sic ametlorem ipsum sicamet lorem
+ipsum sic amet. Ipsum sic ametlorem ipsum sic amet. Lorem 
+ipsum sic amet.</h4>
+                   
                     <div>
                       <b-container class="ps-0 pe-0 pb-3">
                         <b-row>
@@ -78,10 +68,7 @@
                           Regístrate <br />
                           aquí:
                         </h1>
-                        <p>
-                          Los cursos del PEE te permitirán desarrollarte en el
-                          ámbito profesional.
-                        </p>
+                       
                       </b-form-group>
                       <b-form-group
                         class="all-btn"
@@ -167,19 +154,21 @@
                           v-model="usuario.acepta_politica_de_privacidad"
                           id="checkboxes-4"
                           :aria-describedby="ariaDescribedby"
-                          required
+                          required class="pb-5"
                         >
                           <b-form-checkbox class="conditions" value="0">
                           </b-form-checkbox>
                           <span class="text-condiciones">
                             Acepto las
                             <a @click="toggleModal">
-                              condiciones de tratamiento para mis datos.
+                             Acepto los términos y condiciones de <br>
+tratamiento para mis datos personales.
                             </a>
                           </span>
                         </b-form-checkbox-group>
+                        <b-button class="btn all-btn" type="submit">Solicitar Información</b-button>
                       </b-form-group>
-                      <b-button class="btn" type="submit">Enviar</b-button>
+                      
                     </b-form>
                     <b-modal
                       ref="my-modal"
@@ -249,7 +238,7 @@
       <b-container>
         <b-row>
           <b-col>
-            <div class="subtitles">Areas</div>
+            <div class="subtitles">EXPLORA TU CAMINO</div>
           </b-col>
         </b-row>
         <b-row class="d-flex justify-content-center">
@@ -290,10 +279,10 @@
         <b-row>
           <b-col class="mt-5">
             <div class="content-subtitle">
-              <div class="img-number">
-                <img src="../assets/home/numbers/1.png" alt="" />
+               <div class="img-number ">
+                1
               </div>
-              <div class="subtitles">Profesores</div>
+              <div class="subtitles">VENTAJAS COMPETITIVAS</div>
             </div>
           </b-col>
         </b-row>
@@ -302,22 +291,53 @@
         <b-row>
           <b-col>
             <agile :options="myOptions">
-              <div class="slide profesor-1">
-                <h3>slide 1</h3>
+             
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
               </div>
 
-              <div class="slide profesor-2">
-                <h3>slide 2</h3>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                <h3>Mg. Jorge Sandoval Ramírez</h3>
+                <p>Director Ejecutivo del Programa de Compensaciones para la Competitividad – AGROIDEAS.</p>
               </div>
-              <div class="slide profesor-3">
-                <h3>slide 3</h3>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                <h3>Mg. Walther Reátegui Vela</h3>
+                <p>Ha sido Gerente General del Banco Agropecuario – AGROBANCO.</p>
               </div>
-              <div class="slide profesor-4">
-                <h3>slide 4</h3>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                  <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
               </div>
 
-              <div class="slide profesor-5">
-                <h3>slide 5</h3>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                  <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
+              </div>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                  <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
+              </div>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                  <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
+              </div>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                  <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
+              </div>
+              <div class="slide ">
+                <img src="../assets/home/expositores/example.png" alt="">
+                  <h3>Mg. William Arteaga Donayre</h3>
+                <p>Exviceministro de Políticas Agrarias en Ministerio de Agricultura.</p>
               </div>
             </agile>
           </b-col>
@@ -327,16 +347,21 @@
     <section class="certificate-section">
       <b-container>
         <b-row>
-          <b-col>
+          <b-col class="col-semicirculo">
             <div class="semicirculo mb-5">a</div>
           </b-col>
         </b-row>
         <b-row>
           <b-col>
             <div class="content-subtitle">
-              <div class="subtitles">Profesores</div>
+              <div class="subtitles">CERTIFICADOS A NOMBRE DE
+
+                <div>
+                  <img src="../assets/home/sections/certificate/logo.png" alt="">
+                </div>
+              </div>
               <div class="img-number text-right">
-                <img src="../assets/home/numbers/1.png" alt="" />
+                2
               </div>
             </div>
           </b-col>
@@ -346,17 +371,18 @@
     <section class="three-section">
       <b-container>
         <b-row>
-          <b-col>
+          <b-col class="col-semicirculo" >
             <div class="semicirculo mb-5">a</div>
           </b-col>
         </b-row>
         <b-row>
           <b-col>
             <div class="content-subtitle">
-              <div class="img-number">
-                <img src="../assets/home/numbers/1.png" alt="" />
+               <div class="img-number ">
+                3
               </div>
-              <div class="subtitles">Profesores</div>
+              <div class="subtitles">PROGRAMAS PARA SECTORES <br>
+ESPECIALIZADOS</div>
             </div>
           </b-col>
         </b-row>
@@ -365,7 +391,7 @@
     <section class="four-section">
       <b-container>
         <b-row>
-          <b-col>
+          <b-col class="col-semicirculo">
             <div class="semicirculo mb-5">a</div>
           </b-col>
         </b-row>
@@ -376,7 +402,8 @@
                 <b-container>
                   <b-row>
                     <b-col>
-                      <div>dsksldmksamdklsmdlk</div>
+                      <h3>TEMAS ACTUALES DE <br>
+APLICACIÓN INMEDIATA</h3>
                     </b-col>
                     <b-col>
                       <p>
@@ -390,14 +417,43 @@
                   </b-row>
                 </b-container>
               </div>
-              <div class="img-number">
-                <img src="../assets/home/numbers/1.png" alt="" />
+              <div class="img-number text-right ">
+                4
               </div>
             </div>
           </b-col>
         </b-row>
       </b-container>
     </section>
+     <section class="networking-section">
+      <b-container>
+        <b-row>
+          <b-col class="col-semicirculo">
+            <div class="semicirculo mb-5">a</div>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <div class="content-subtitle">
+              <div class="subtitles">
+                <b-container>
+                  <b-row>
+                    <b-col>
+                      <div>NETWORKING</div>
+                    </b-col>
+                    
+                  </b-row>
+                </b-container>
+              </div>
+              <div class="img-number  ">
+                5
+              </div>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </section>
+
 
     <FooterPage />
 
@@ -433,15 +489,17 @@ export default {
       },
       show: true,
       myOptions: {
-        navButtons: false,
+        navButtons: true,
         slidesToShow: 1,
         autoplay: true,
+        
 
         responsive: [
           {
             breakpoint: 800,
             settings: {
               slidesToShow: 3,
+              dots: true,
             },
           },
           {
@@ -502,6 +560,8 @@ const $ = require("jquery");
 @import '../styles/home.styl';
 @import '../styles/main.styl';
 
+
+
 p {
   margin-bottom: 1px;
 }
@@ -535,9 +595,22 @@ h1 {
 }
 
 .form-class {
-  background-color: bg-form;
+  background-color: rgba(139, 143, 157, 0.4);
   width: 100%;
-  max-width: 386px;
+  max-width: 527px;
+  .btn {
+  background-color: primary-ide;
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  border-radius: 40px;
+  color: bg-form;
+  font-weight: bold;
+  font-size: 30px;
+  border 3.5px solid white;
+  font-family: gt-pressura-bold;
+  margin-bottom 100px
+}
 }
 
 .custom-checkbox {
@@ -553,16 +626,7 @@ h1 {
   padding: 0px 40px;
 }
 
-.btn {
-  background-color: #C0B170;
-  width: 100%;
-  height: 80px;
-  margin-top: 10px;
-  border-radius: 0px;
-  color: bg-form;
-  font-weight: bold;
-  font-size: 30px;
-}
+
 
 .form-g {
   padding-top: 40px;
@@ -570,8 +634,8 @@ h1 {
 
 input, select {
   margin-bottom: 0px;
-  background-color: bg-form;
-  border-radius: 0px;
+  background-color: #71747C;
+  border-radius: 8px;
   font-family: raleway-regular;
   font-size: 14px;
   padding: 0.375rem 0.75rem;
@@ -580,7 +644,7 @@ input, select {
 input {
   border: none;
   border-bottom: 1.8px solid white;
-  color: #676868;
+  color: white;
 }
 
 select {
@@ -590,108 +654,44 @@ select {
   color: white;
 }
 
-.semicirculo {
+.col-semicirculo{
+  height: 62px
+  .semicirculo {
   height: 30px;
   width: 60px;
-  background: #0074d9;
   border-radius: 50% / 0 0 100% 100%;
   margin: auto;
   text-align: center;
 }
+}
 
 .subtitles {
-  font-size: 32px;
+  font-size: 75px;
   font-weight: bold;
   padding-bottom: 60px;
   position: absolute;
+  text-transform: uppercase;
   display: inline-block;
   z-index: 2;
   top: 0px;
   text-align: center;
   width: 100%;
+  font-family gt-pressura-bold
 }
 
 .img-number {
   position: relative;
-  top: -220px;
+  top: -0px;
   left: 0px;
   z-index: 1;
+  font-size 629px;
+  line-height 320px;
+  font-weight bold
+  color: rgba(255, 255, 255, 0.3);
+  font-family gt-pressura-bold
 }
 
 .areas-section {
   padding: 120px 0px;
-}
-
-.profesores-section {
-  background-color: blue;
-  padding: 120px 0px;
-  overflow: hidden;
-
-  .content-subtitle {
-    position: relative;
-    display: inline-block;
-    height: 60px;
-    width: 100%;
-  }
-
-  .profesor-1 {
-    background-image: url('../assets/home/areas/salud/kv-1.jpg') !important;
-  }
-
-  .profesor-2 {
-    background-image: url('../assets/home/areas/energia/kv-1.jpg') !important;
-  }
-
-  .profesor-3 {
-    background-image: url('../assets/home/areas/salud/kv-1.jpg') !important;
-  }
-
-  .profesor-4 {
-    background-image: url('../assets/home/areas/energia/kv-1.jpg') !important;
-  }
-
-  .profesor-5 {
-    background-image: url('../assets/home/areas/salud/kv-1.jpg') !important;
-  }
-}
-
-.certificate-section {
-  overflow: hidden;
-
-  .img-number {
-    position: relative;
-    top: -120px;
-    z-index: 1;
-
-    img {
-      right: 0px;
-    }
-  }
-
-  .content-subtitle {
-    width: 100%;
-  }
-}
-
-.three-section {
-  overflow: hidden;
-}
-
-.four-section {
-  overflow: hidden;
-
-  .img-number {
-    position: relative;
-    top: -120px;
-    z-index: 1;
-
-    img {
-      right: 0px;
-    }
-  }
-
-  .content-subtitle {
-    width: 100%;
-  }
 }
 </style>
